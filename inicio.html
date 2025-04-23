@@ -9,12 +9,12 @@
 <body>
   <div class="container">
     <h1>Olá!</h1>
+    <button onclick="location.href='registrar.html'">🩺 Registrar Aferição</button>
     <button onclick="location.href='dashboard.html'">📊 Ver Aferições de Hoje</button>
     <button onclick="location.href='historico.html'">📅 Histórico Completo</button>
     <button onclick="location.href='relatorio.html'">📄 Gerar Relatório</button>
     <button onclick="logout()">🚪 Sair</button>
   </div>
-
   <script type="module">
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
