@@ -17,7 +17,7 @@ body {
   max-width: 400px;
   margin: 2rem auto;
 }
-h1 {
+h1, h2 {
   text-align: center;
   color: #d63384;
 }
@@ -26,7 +26,7 @@ label {
   margin-top: 1rem;
   color: #2a9d8f;
 }
-input, textarea, select {
+input, textarea, select, button {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.3rem;
@@ -34,15 +34,11 @@ input, textarea, select {
   border-radius: 5px;
 }
 button {
-  margin-top: 1.5rem;
-  width: 100%;
-  padding: 0.7rem;
   background-color: #d63384;
-  border: none;
   color: #fff;
   font-size: 1rem;
-  border-radius: 5px;
   cursor: pointer;
+  margin-top: 1rem;
 }
 button:hover {
   background-color: #c12774;
