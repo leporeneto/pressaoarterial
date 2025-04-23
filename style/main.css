@@ -26,7 +26,7 @@ label {
   margin-top: 1rem;
   color: #2a9d8f;
 }
-input, textarea {
+input, textarea, select {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.3rem;

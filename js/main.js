@@ -2,11 +2,9 @@ import { db } from './firebase-config.js';
 import { ref, push } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
 import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging.js";
 
-// Firebase Messaging
 const messaging = getMessaging();
 navigator.serviceWorker.register('firebase-messaging-sw.js')
   .then((registration) => {
-    console.log('Service Worker registrado:', registration);
     Notification.requestPermission().then((permission) => {
       if (permission === 'granted') {
         getToken(messaging, {
@@ -15,25 +13,24 @@ navigator.serviceWorker.register('firebase-messaging-sw.js')
         }).then((currentToken) => {
           if (currentToken) {
             console.log('Token de notificação:', currentToken);
-          } else {
-            console.warn('Nenhum token disponível.');
           }
         });
       }
     });
   });
 
-// Registro de aferições
 const form = document.getElementById('afericaoForm');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
   const agora = new Date().toISOString();
+  const usuario = document.getElementById('usuario').value;
   const pas = document.getElementById('pas').value;
   const pad = document.getElementById('pad').value;
   const fc = document.getElementById('fc').value;
   const sintomas = document.getElementById('sintomas').value;
 
   const afericao = {
+    usuario,
     dataHora: agora,
     pas: Number(pas),
     pad: Number(pad),
