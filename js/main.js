@@ -1,6 +1,29 @@
 import { db } from './firebase-config.js';
 import { ref, push } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging.js";
 
+// Firebase Messaging
+const messaging = getMessaging();
+navigator.serviceWorker.register('firebase-messaging-sw.js')
+  .then((registration) => {
+    console.log('Service Worker registrado:', registration);
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        getToken(messaging, {
+          vapidKey: 'BFuseE_VdrOkvs8cnNqZWvT1vf0n96OimhNV1yQRlZsVFCLdaINX2MK73y3WF9Gw_dpPmJwppgYPi0_FlY5zams',
+          serviceWorkerRegistration: registration
+        }).then((currentToken) => {
+          if (currentToken) {
+            console.log('Token de notificação:', currentToken);
+          } else {
+            console.warn('Nenhum token disponível.');
+          }
+        });
+      }
+    });
+  });
+
+// Registro de aferições
 const form = document.getElementById('afericaoForm');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
