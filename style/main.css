@@ -1,24 +1,21 @@
 body {
-  background-image: url('../assets/background.png');
-  background-size: cover;        /* Preenche toda a tela */
-  background-position: center;   /* Centraliza a imagem */
-  background-repeat: no-repeat;  /* Não repete */
-  background-attachment: fixed;  /* Fixa a imagem enquanto rola a página */
-}
-body {
   font-family: Arial, sans-serif;
-  background-color: #fdf6f0;
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #333;
   margin: 0;
   padding: 2rem;
 }
 .container {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   max-width: 400px;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 h1 {
   text-align: center;

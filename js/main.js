@@ -1,3 +1,6 @@
+import { db } from './firebase-config.js';
+import { ref, push } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+
 const form = document.getElementById('afericaoForm');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -16,7 +19,7 @@ form.addEventListener('submit', function(e) {
   };
 
   const dataKey = agora.substr(0,10);
-  firebase.database().ref('afericoes/' + dataKey).push(afericao)
+  push(ref(db, 'afericoes/' + dataKey), afericao)
     .then(() => {
       alert('Aferição registrada com sucesso!');
       form.reset();
