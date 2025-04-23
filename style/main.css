@@ -1,4 +1,11 @@
 body {
+  background-image: url('../assets/background.png');
+  background-size: cover;        /* Preenche toda a tela */
+  background-position: center;   /* Centraliza a imagem */
+  background-repeat: no-repeat;  /* Não repete */
+  background-attachment: fixed;  /* Fixa a imagem enquanto rola a página */
+}
+body {
   font-family: Arial, sans-serif;
   background-color: #fdf6f0;
   color: #333;
